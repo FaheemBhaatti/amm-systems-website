@@ -35,10 +35,19 @@ const observer = new IntersectionObserver(
 
 document.querySelectorAll('.reveal').forEach((el) => observer.observe(el));
 
+const screenshotGallery = document.getElementById('solutions-gallery');
+const screenshotCards = screenshotGallery
+  ? screenshotGallery.querySelectorAll('.screenshot-card')
+  : [];
 const featuredPreview = document.querySelector('.product-image img');
-const screenshotCards = document.querySelectorAll('.screenshot-card');
+const screenshotLightbox = document.getElementById('screenshot-lightbox');
+const screenshotLightboxImage = document.getElementById('screenshot-lightbox-image');
+const screenshotLightboxTitle = document.getElementById('screenshot-lightbox-title');
+const screenshotLightboxClose = document.getElementById('screenshot-lightbox-close');
+let lightboxTrigger = null;
+let lightboxCloseTimer = null;
 
-if (featuredPreview && screenshotCards.length) {
+if (screenshotCards.length) {
   const setActiveCard = (card) => {
     const thumb = card.querySelector('img');
     if (!thumb) {
@@ -48,11 +57,11 @@ if (featuredPreview && screenshotCards.length) {
     const nextSrc = thumb.getAttribute('src');
     const nextAlt = thumb.getAttribute('alt');
 
-    if (nextSrc) {
+    if (featuredPreview && nextSrc) {
       featuredPreview.setAttribute('src', nextSrc);
     }
 
-    if (nextAlt) {
+    if (featuredPreview && nextAlt) {
       featuredPreview.setAttribute('alt', nextAlt);
     }
 
@@ -63,8 +72,77 @@ if (featuredPreview && screenshotCards.length) {
     });
   };
 
+  const openLightbox = (card) => {
+    if (!screenshotLightbox || !screenshotLightboxImage || !screenshotLightboxTitle) {
+      return;
+    }
+
+    const thumb = card.querySelector('img');
+    const caption = card.querySelector('.screenshot-card-title');
+    if (!thumb) {
+      return;
+    }
+
+    const imageSrc = thumb.getAttribute('src') || '';
+    const imageAlt = thumb.getAttribute('alt') || '';
+    const imageTitle = caption?.textContent?.trim() || imageAlt || 'Screenshot preview';
+
+    screenshotLightboxImage.setAttribute('src', imageSrc);
+    screenshotLightboxImage.setAttribute('alt', imageAlt);
+    screenshotLightboxTitle.textContent = imageTitle;
+    screenshotLightbox.hidden = false;
+    screenshotLightbox.setAttribute('aria-hidden', 'false');
+    document.body.classList.add('lightbox-open');
+    lightboxTrigger = card;
+
+    requestAnimationFrame(() => {
+      screenshotLightbox.classList.add('is-open');
+    });
+
+    screenshotLightboxClose?.focus();
+  };
+
+  const closeLightbox = () => {
+    if (!screenshotLightbox || screenshotLightbox.hidden) {
+      return;
+    }
+
+    screenshotLightbox.classList.remove('is-open');
+    screenshotLightbox.setAttribute('aria-hidden', 'true');
+    document.body.classList.remove('lightbox-open');
+
+    if (lightboxCloseTimer) {
+      window.clearTimeout(lightboxCloseTimer);
+    }
+
+    lightboxCloseTimer = window.setTimeout(() => {
+      screenshotLightbox.hidden = true;
+      if (lightboxTrigger instanceof HTMLElement) {
+        lightboxTrigger.focus();
+      }
+    }, 180);
+  };
+
   screenshotCards.forEach((card) => {
-    card.addEventListener('click', () => setActiveCard(card));
+    card.addEventListener('click', () => {
+      setActiveCard(card);
+      openLightbox(card);
+    });
+  });
+
+  screenshotLightboxClose?.addEventListener('click', closeLightbox);
+
+  screenshotLightbox?.addEventListener('click', (event) => {
+    if (event.target === screenshotLightbox) {
+      closeLightbox();
+    }
+  });
+
+  document.addEventListener('keydown', (event) => {
+    if (event.key === 'Escape' && screenshotLightbox && !screenshotLightbox.hidden) {
+      event.preventDefault();
+      closeLightbox();
+    }
   });
 }
 
