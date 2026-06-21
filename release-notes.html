@@ -1,0 +1,222 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Snooker Club Pro Release Notes | AMM Systems</title>
+  <meta name="description" content="Release notes for Snooker Club Pro, professional snooker club management software by AMM Systems.">
+  <link rel="icon" type="image/png" sizes="32x32" href="/assets/favicon.png">
+  <link rel="shortcut icon" href="/assets/favicon.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&amp;family=Space+Grotesk:wght@500;600;700&amp;display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+  <style>
+    .release-main {
+      min-height: calc(100vh - 4.75rem);
+    }
+
+    .release-hero {
+      padding-top: clamp(4.5rem, 8vw, 7rem);
+      padding-bottom: clamp(4.5rem, 8vw, 6.5rem);
+    }
+
+    .release-layout {
+      display: grid;
+      grid-template-columns: minmax(0, 0.92fr) minmax(320px, 1.08fr);
+      gap: 1.2rem;
+      align-items: start;
+    }
+
+    .release-copy h1 {
+      font-size: clamp(2.1rem, 5vw, 4.2rem);
+      letter-spacing: -0.015em;
+      margin-bottom: 1rem;
+      max-width: 12ch;
+    }
+
+    .release-intro {
+      color: var(--muted);
+      font-size: 1.08rem;
+      line-height: 1.72;
+      max-width: 52ch;
+    }
+
+    .release-actions {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.85rem;
+      margin-top: 1.45rem;
+    }
+
+    .release-card {
+      padding: clamp(1.35rem, 3vw, 2rem);
+    }
+
+    .release-entry-header {
+      display: grid;
+      gap: 0.75rem;
+      margin-bottom: 1.45rem;
+      padding-bottom: 1.25rem;
+      border-bottom: 1px solid rgba(56, 98, 133, 0.44);
+    }
+
+    .release-version {
+      color: #e9f3ff;
+      font-family: "Space Grotesk", "Segoe UI", sans-serif;
+      font-size: clamp(1.45rem, 3vw, 2.1rem);
+      font-weight: 700;
+      line-height: 1.15;
+      margin: 0;
+    }
+
+    .release-meta {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.55rem;
+      list-style: none;
+      margin: 0;
+      padding: 0;
+    }
+
+    .release-meta li {
+      border: 1px solid rgba(67, 113, 145, 0.58);
+      border-radius: 999px;
+      background: rgba(11, 36, 57, 0.62);
+      color: #cfe6fa;
+      font-size: 0.82rem;
+      font-weight: 700;
+      line-height: 1.25;
+      padding: 0.42rem 0.72rem;
+    }
+
+    .release-status {
+      border-color: rgba(67, 153, 148, 0.65);
+      background: rgba(13, 57, 65, 0.55);
+      color: #a5f0e5;
+    }
+
+    .release-section-title {
+      font-size: 1.08rem;
+      margin-bottom: 0.8rem;
+    }
+
+    .release-card .feature-list {
+      margin-top: 0;
+    }
+
+    @media (max-width: 900px) {
+      .release-layout {
+        grid-template-columns: 1fr;
+      }
+
+      .release-copy h1 {
+        max-width: none;
+      }
+    }
+
+    @media (max-width: 640px) {
+      .release-actions .btn {
+        width: 100%;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div id="top" aria-hidden="true"></div>
+
+  <header class="site-header" id="home">
+    <div class="container nav-wrap">
+      <a class="logo" href="index.html#top" aria-label="AMM Systems home">
+        <img src="assets/logo.png" alt="AMM Systems logo" class="logo-image">
+        <span class="logo-text">AMM Systems</span>
+      </a>
+
+      <button class="menu-toggle" aria-expanded="false" aria-controls="main-nav" aria-label="Toggle navigation">
+        <span></span>
+        <span></span>
+      </button>
+
+      <nav id="main-nav" class="nav" aria-label="Primary navigation">
+        <a href="index.html#top">Home</a>
+        <a href="index.html#services">Services</a>
+        <a href="index.html#solutions">Solutions</a>
+        <a href="index.html#about">About</a>
+        <a href="index.html#contact">Contact</a>
+      </nav>
+
+      <a class="btn btn-nav" href="index.html#contact">Get in Touch</a>
+    </div>
+  </header>
+
+  <main class="release-main">
+    <section class="section release-hero">
+      <div class="container release-layout">
+        <div class="release-copy reveal">
+          <p class="eyebrow">Product Updates</p>
+          <h1>Snooker Club Pro Release Notes</h1>
+          <p class="release-intro">
+            Latest public release information for Snooker Club Pro, the Windows desktop system for snooker club operations, billing, reporting, and license activation.
+          </p>
+          <div class="release-actions">
+            <a class="btn btn-primary" href="https://ammsystems.info/download">Back to Download</a>
+          </div>
+        </div>
+
+        <article class="card release-card reveal" aria-labelledby="version-100">
+          <div class="release-entry-header">
+            <h2 class="release-version" id="version-100">Version 1.0.0</h2>
+            <ul class="release-meta" aria-label="Release details">
+              <li>Released: June 2026</li>
+              <li class="release-status">Status: Initial Public Trial Release</li>
+            </ul>
+          </div>
+
+          <h3 class="release-section-title">Changes</h3>
+          <ul class="feature-list">
+            <li>Added desktop table session management</li>
+            <li>Added automatic billing calculation</li>
+            <li>Added daily revenue tracking</li>
+            <li>Added daily closing reports</li>
+            <li>Added trial and yearly license activation</li>
+            <li>Added secure online license validation</li>
+            <li>Added public download page at /download</li>
+          </ul>
+        </article>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container footer-grid">
+      <div>
+        <p class="footer-brand">AMM Systems</p>
+        <p>Modern software for real business operations.</p>
+      </div>
+      <div class="footer-links" aria-label="Footer links">
+        <a href="index.html#top">Home</a>
+        <a href="index.html#services">Services</a>
+        <a href="index.html#solutions">Solutions</a>
+        <a href="index.html#about">About</a>
+        <a href="index.html#contact">Contact</a>
+      </div>
+      <p class="copyright">&copy; <span id="year"></span> AMM Systems. All rights reserved.</p>
+    </div>
+  </footer>
+
+  <a
+    class="floating-whatsapp"
+    href="https://wa.me/923214317757?text=Hello%20AMM%20Systems%2C%0A%0AI%20need%20support%20with%20Snooker%20Club%20Pro."
+    target="_blank"
+    rel="noopener noreferrer"
+    aria-label="Chat with AMM Systems on WhatsApp"
+  >
+    <svg viewBox="0 0 24 24" aria-hidden="true">
+      <path d="M19.05 4.94A9.87 9.87 0 0 0 12 2C6.48 2 2 6.47 2 12c0 1.76.46 3.48 1.34 5L2 22l5.15-1.31A9.95 9.95 0 0 0 12 22c5.52 0 10-4.48 10-10 0-2.67-1.04-5.18-2.95-7.06zm-7.05 15.3a8.26 8.26 0 0 1-4.22-1.16l-.3-.18-3.06.78.82-2.99-.2-.31A8.23 8.23 0 0 1 3.77 12c0-4.53 3.69-8.23 8.23-8.23 2.2 0 4.27.86 5.83 2.42A8.19 8.19 0 0 1 20.23 12c0 4.54-3.69 8.24-8.23 8.24zm4.52-6.16c-.25-.13-1.46-.72-1.69-.8-.23-.09-.39-.13-.55.12-.17.25-.64.8-.79.96-.15.17-.29.19-.54.07-.25-.13-1.05-.39-2-1.24a7.57 7.57 0 0 1-1.38-1.71c-.14-.25-.01-.38.11-.5.12-.12.25-.29.38-.43.13-.15.17-.25.25-.42.08-.17.04-.31-.02-.43-.07-.13-.55-1.34-.75-1.84-.2-.48-.4-.42-.55-.42h-.47c-.16 0-.43.06-.66.31-.22.25-.86.84-.86 2.05s.89 2.38 1.01 2.54c.13.17 1.75 2.67 4.23 3.74.59.26 1.05.41 1.41.52.59.19 1.12.16 1.54.1.47-.07 1.46-.6 1.66-1.18.21-.58.21-1.08.15-1.18-.06-.1-.22-.16-.47-.29z"/>
+    </svg>
+    <span>WhatsApp</span>
+  </a>
+
+  <script src="script.js"></script>
+</body>
+</html>
