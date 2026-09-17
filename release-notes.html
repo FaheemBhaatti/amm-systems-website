@@ -49,6 +49,16 @@
       margin-top: 1.45rem;
     }
 
+    .release-entries {
+      display: grid;
+      gap: 1.2rem;
+      min-width: 0;
+    }
+
+    .release-card .feature-list + .release-section-title {
+      margin-top: 1.45rem;
+    }
+
     .release-card {
       padding: clamp(1.35rem, 3vw, 2rem);
     }
@@ -163,26 +173,64 @@
           </div>
         </div>
 
-        <article class="card release-card reveal" aria-labelledby="version-100">
-          <div class="release-entry-header">
-            <h2 class="release-version" id="version-100">Version 1.0.0</h2>
-            <ul class="release-meta" aria-label="Release details">
-              <li>Released: June 2026</li>
-              <li class="release-status">Status: Initial Public Trial Release</li>
-            </ul>
-          </div>
+        <div class="release-entries">
+          <article class="card release-card reveal" aria-labelledby="version-200">
+            <div class="release-entry-header">
+              <h2 class="release-version" id="version-200">Version 2.0.0</h2>
+              <ul class="release-meta" aria-label="Release details">
+                <li>Released: September 2026</li>
+                <li class="release-status">Windows x64</li>
+              </ul>
+            </div>
 
-          <h3 class="release-section-title">Changes</h3>
-          <ul class="feature-list">
-            <li>Added desktop table session management</li>
-            <li>Added automatic billing calculation</li>
-            <li>Added daily revenue tracking</li>
-            <li>Added daily closing reports</li>
-            <li>Added trial and yearly license activation</li>
-            <li>Added secure online license validation</li>
-            <li>Added public download page at /download</li>
-          </ul>
-        </article>
+            <h3 class="release-section-title">Snooker Club Pro 2.0</h3>
+            <p>A modern Windows desktop experience for daily snooker club operations.</p>
+            <h3 class="release-section-title">Tables &amp; Sessions</h3>
+            <ul class="feature-list">
+              <li>Single, Double, Century, and Challenge Mode session workflows.</li>
+              <li>Table management with session billing and status visibility.</li>
+            </ul>
+            <h3 class="release-section-title">Payments &amp; Club Sales</h3>
+            <ul class="feature-list">
+              <li>Payment and settlement workflows.</li>
+              <li>Customer accounts.</li>
+              <li>POS / café sales and stock management.</li>
+            </ul>
+            <h3 class="release-section-title">Business Management</h3>
+            <ul class="feature-list">
+              <li>Inventory visibility and management.</li>
+              <li>Expense management.</li>
+              <li>Owner operational visibility.</li>
+              <li>Business-day reporting.</li>
+            </ul>
+            <h3 class="release-section-title">Desktop &amp; Licensing</h3>
+            <ul class="feature-list">
+              <li>Modern Windows desktop experience.</li>
+              <li>License activation and management.</li>
+            </ul>
+          </article>
+
+          <article class="card release-card reveal" aria-labelledby="version-100">
+            <div class="release-entry-header">
+              <h2 class="release-version" id="version-100">Version 1.0.0</h2>
+              <ul class="release-meta" aria-label="Release details">
+                <li>Released: June 2026</li>
+                <li class="release-status">Status: Initial Public Trial Release</li>
+              </ul>
+            </div>
+
+            <h3 class="release-section-title">Changes</h3>
+            <ul class="feature-list">
+              <li>Added desktop table session management</li>
+              <li>Added automatic billing calculation</li>
+              <li>Added daily revenue tracking</li>
+              <li>Added daily closing reports</li>
+              <li>Added trial and yearly license activation</li>
+              <li>Added secure online license validation</li>
+              <li>Added public download page at /download</li>
+            </ul>
+          </article>
+        </div>
       </div>
     </section>
   </main>
